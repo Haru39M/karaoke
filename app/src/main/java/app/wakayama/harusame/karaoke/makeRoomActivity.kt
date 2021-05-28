@@ -13,10 +13,12 @@ class makeRoomActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             val toMainIntent:Intent = Intent(this,MainActivity::class.java)
             startActivity(toMainIntent)
+            finish()
         }
         okButton.setOnClickListener {
             val toPlayRoomIntent:Intent = Intent(this,playRoomActivity::class.java)
             startActivity(toPlayRoomIntent)
+            finish()
         }
     }
 }

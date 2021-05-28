@@ -14,11 +14,13 @@ class MainActivity : AppCompatActivity() {
         makeRoomButton.setOnClickListener {
             val toMakeRoomIntent:Intent = Intent(this,makeRoomActivity::class.java)
             startActivity(toMakeRoomIntent)
+            finish()
         }
         //goto joinroom
         joinRoomButton.setOnClickListener {
             val toJoinRoomIntent:Intent = Intent(this,joinRoomActivity::class.java)
             startActivity(toJoinRoomIntent)
+            finish()
         }
 
     }

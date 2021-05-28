@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "225784515400",
+    "project_id": "karaoke-47eb6",
+    "storage_bucket": "karaoke-47eb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225784515400:android:5b4826f66dfc25c8e1417d",
+        "android_client_info": {
+          "package_name": "app.wakayama.harusame.karaoke"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225784515400-po0op5pvdfbta2038mf5be1lp8jpl48b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVh1yjALtv-uIOURzWPatDZdT09HW4qQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225784515400-po0op5pvdfbta2038mf5be1lp8jpl48b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
