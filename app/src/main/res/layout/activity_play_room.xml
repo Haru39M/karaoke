@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".playRoomActivity">
 
+    <TextView
+        android:id="@+id/selectedRoomIdTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="roomNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/playSound1Button"
         android:layout_width="wrap_content"

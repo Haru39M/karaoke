@@ -18,12 +18,16 @@ class playRoomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play_room)
 
-        val selectedRoom: String? = intent.getStringExtra("selectedRoom")
+        //選択されたルーム名を取得
+        val selectedRoom: String = intent.getStringExtra("selectedRoom").toString()
         Log.d("TAG","get roomID => ${selectedRoom}")
+        selectedRoomIdTextView.text = selectedRoom//部屋名を表示
+
         //コレクションネームは不変、ドキュメントIDがルーム名、データを未再生リストとする。
         val collectionName: String = "karaoke"
-        //roomIdとPassWordはmakeRoomからもらう
-        val roomId: String = "room1"
+
+        //初期化用データ。roomIdとPassWordはmakeRoomからもらう
+        val roomId: String = selectedRoom
         val PassWord: String = "admin"
         val defaultData = hashMapOf(//初期化する時のデータ
             "pass" to PassWord,
@@ -32,6 +36,7 @@ class playRoomActivity : AppCompatActivity() {
             "sound3" to 0,
             "sound4" to 0
         )
+        //初期化していくぅ！
         db.collection(collectionName).document(roomId)
             .set(defaultData)
             .addOnSuccessListener {
@@ -106,7 +111,7 @@ class playRoomActivity : AppCompatActivity() {
         }
 
         playSound1Button.setOnClickListener{
-            pushMusic("room1","sound1")
+            pushMusic(roomId,"sound1")
         }
 
     }
