@@ -18,7 +18,7 @@ class playRoomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play_room)
 
-        //選択されたルーム名を取得
+        //joinで選択されたルーム名を取得
         val selectedRoom: String = intent.getStringExtra("selectedRoom").toString()
         Log.d("TAG","get roomID => ${selectedRoom}")
         selectedRoomIdTextView.text = selectedRoom//部屋名を表示
@@ -26,25 +26,10 @@ class playRoomActivity : AppCompatActivity() {
         //コレクションネームは不変、ドキュメントIDがルーム名、データを未再生リストとする。
         val collectionName: String = "karaoke"
 
-        //初期化用データ。roomIdとPassWordはmakeRoomからもらう
+        //受け取ったIDとパスワード
         val roomId: String = selectedRoom
         val PassWord: String = "admin"
-        val defaultData = hashMapOf(//初期化する時のデータ
-            "pass" to PassWord,
-            "sound1" to 0,
-            "sound2" to 0,
-            "sound3" to 0,
-            "sound4" to 0
-        )
-        //初期化していくぅ！
-        db.collection(collectionName).document(roomId)
-            .set(defaultData)
-            .addOnSuccessListener {
-                Log.d("TAG", "successed to initializing")
-            }
-            .addOnFailureListener { e ->
-                Log.w("TAG", "failed to initializing", e)
-            }
+
 
         //データをクラウドに保存する関数
         fun createData(roomId:String,musicID:String,times:Int){//ならす音楽のIDと回数を入力
