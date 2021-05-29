@@ -77,11 +77,48 @@ class playRoomActivity : AppCompatActivity() {
 
             if (document != null && document.exists()) {
 //                Log.d("TAG", "Current data: ${document.data}")
+                fun playMusic(soundId:String){
+                    //未再生回数を取得
+                    var playList:Int = document.data?.get(soundId).toString().toInt()
+                    if(0 < playList){//再生リストに残っていれば
+                        //音楽を再生
+                        Log.d("TAG", "receive played!!!")
+                        when(soundId){
+                            "sound1" -> {
+                                val drumSound = MediaPlayer.create(this,R.raw.hyoushigi)//Rはresのこと。.でパスを表している
+                                drumSound.seekTo(0)
+                                drumSound.start()
+                                //データを更新
+                                playList -= 1
+                                val newData = hashMapOf(
+                                    soundId to playList
+                                )
+                                docRef.set(newData, SetOptions.merge())//データを統合
+                            }
+                            "sound2" -> {
+                                val drumSound = MediaPlayer.create(this,R.raw.hyoushigi2)//Rはresのこと。.でパスを表している
+                                drumSound.seekTo(0)
+                                drumSound.start()
+                                //データを更新
+                                playList -= 1
+                                val newData = hashMapOf(
+                                    soundId to playList
+                                )
+                                docRef.set(newData, SetOptions.merge())//データを統合
+                            }
+                        }
+                    }
+                }
+                playMusic("sound1")
+                playMusic("sound2")
+//                playMusic("sound3")
+//                playMusic("sound4")
+//                playMusic("sound5")
+//                playMusic("sound6")
+//                playMusic("sound7")
+//                playMusic("sound8")
 
-                Log.d("TAG", "receive played!!!")//音楽を再生
-                val drumSound = MediaPlayer.create(this,R.raw.cymbal1)//Rはresのこと。.でパスを表している
-                drumSound.seekTo(0)
-                drumSound.start()
+
             } else {
                 Log.d("TAG", "Current data: null")
             }
@@ -95,8 +132,12 @@ class playRoomActivity : AppCompatActivity() {
             finish()
         }
 
+        //ボタンが押されると音楽を送信・再生
         playSound1Button.setOnClickListener{
             pushMusic(roomId,"sound1")
+        }
+        playSound2Button.setOnClickListener {
+            pushMusic(roomId,"sound2")
         }
 
     }
