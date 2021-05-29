@@ -46,7 +46,11 @@ class makeRoomActivity : AppCompatActivity() {
                 "sound1" to 0,
                 "sound2" to 0,
                 "sound3" to 0,
-                "sound4" to 0
+                "sound4" to 0,
+                "sound5" to 0,
+                "sound6" to 0,
+                "sound7" to 0,
+                "sound8" to 0
             )
             //初期化していくぅ！
             db.collection(collectionName).document(roomId)

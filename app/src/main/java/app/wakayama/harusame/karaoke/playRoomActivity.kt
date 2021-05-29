@@ -106,19 +106,83 @@ class playRoomActivity : AppCompatActivity() {
                                 )
                                 docRef.set(newData, SetOptions.merge())//データを統合
                             }
+                            "sound3" -> {
+                                val drumSound = MediaPlayer.create(this,R.raw.wadaiko)//Rはresのこと。.でパスを表している
+                                drumSound.seekTo(0)
+                                drumSound.start()
+                                //データを更新
+                                playList -= 1
+                                val newData = hashMapOf(
+                                    soundId to playList
+                                )
+                                docRef.set(newData, SetOptions.merge())//データを統合
+                            }
+                            "sound4" -> {
+                                val drumSound = MediaPlayer.create(this,R.raw.wadaiko2)//Rはresのこと。.でパスを表している
+                                drumSound.seekTo(0)
+                                drumSound.start()
+                                //データを更新
+                                playList -= 1
+                                val newData = hashMapOf(
+                                    soundId to playList
+                                )
+                                docRef.set(newData, SetOptions.merge())//データを統合
+                            }
+                            "sound5" -> {
+                                val drumSound = MediaPlayer.create(this,R.raw.dora)//Rはresのこと。.でパスを表している
+                                drumSound.seekTo(0)
+                                drumSound.start()
+                                //データを更新
+                                playList -= 1
+                                val newData = hashMapOf(
+                                    soundId to playList
+                                )
+                                docRef.set(newData, SetOptions.merge())//データを統合
+                            }
+                            "sound6" -> {
+                                val drumSound = MediaPlayer.create(this,R.raw.kastanet)//Rはresのこと。.でパスを表している
+                                drumSound.seekTo(0)
+                                drumSound.start()
+                                //データを更新
+                                playList -= 1
+                                val newData = hashMapOf(
+                                    soundId to playList
+                                )
+                                docRef.set(newData, SetOptions.merge())//データを統合
+                            }
+                            "sound7" -> {
+                                val drumSound = MediaPlayer.create(this,R.raw.kozutsumi)//Rはresのこと。.でパスを表している
+                                drumSound.seekTo(0)
+                                drumSound.start()
+                                //データを更新
+                                playList -= 1
+                                val newData = hashMapOf(
+                                    soundId to playList
+                                )
+                                docRef.set(newData, SetOptions.merge())//データを統合
+                            }
+                            "sound8" -> {
+                                val drumSound = MediaPlayer.create(this,R.raw.oh_man)//Rはresのこと。.でパスを表している
+                                drumSound.seekTo(0)
+                                drumSound.start()
+                                //データを更新
+                                playList -= 1
+                                val newData = hashMapOf(
+                                    soundId to playList
+                                )
+                                docRef.set(newData, SetOptions.merge())//データを統合
+                            }
                         }
                     }
                 }
                 playMusic("sound1")
                 playMusic("sound2")
-//                playMusic("sound3")
-//                playMusic("sound4")
-//                playMusic("sound5")
-//                playMusic("sound6")
-//                playMusic("sound7")
-//                playMusic("sound8")
-
-
+                playMusic("sound3")
+                playMusic("sound4")
+                playMusic("sound5")
+                playMusic("sound6")
+                playMusic("sound7")
+                playMusic("sound8")
             } else {
                 Log.d("TAG", "Current data: null")
             }
@@ -138,6 +202,24 @@ class playRoomActivity : AppCompatActivity() {
         }
         playSound2Button.setOnClickListener {
             pushMusic(roomId,"sound2")
+        }
+        playSound3Button.setOnClickListener {
+            pushMusic(roomId,"sound3")
+        }
+        playSound4Button.setOnClickListener {
+            pushMusic(roomId,"sound4")
+        }
+        playSound5Button.setOnClickListener {
+            pushMusic(roomId,"sound5")
+        }
+        playSound6Button.setOnClickListener {
+            pushMusic(roomId,"sound6")
+        }
+        playSound7Button.setOnClickListener {
+            pushMusic(roomId,"sound7")
+        }
+        playSound8Button.setOnClickListener {
+            pushMusic(roomId,"sound8")
         }
 
     }
