@@ -74,7 +74,7 @@ class makeRoomActivity : AppCompatActivity() {
                     Log.d("TAG","データの取得に成功しました。")
                     val peopleNumber = document.data?.get("people").toString().toInt()
                     Log.d("TAG","入室者は${peopleNumber}です")
-                    if (peopleNumber != 0) {
+                    if (peopleNumber > 0) {
                         alertTextView.setTextColor(Color.parseColor("#ff0000"))
                         alertTextView.text = "既に入室者が居るためルームを初期化できません。"
                     }else{
