@@ -22,9 +22,10 @@
         android:layout_height="96sp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="96dp"
+        android:background="@drawable/hyoushigi"
+        android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/playSound2Button"
@@ -32,9 +33,10 @@
         android:layout_height="96sp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="80dp"
+        android:background="@drawable/hyoushigi"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/playSound3Button"
@@ -42,9 +44,10 @@
         android:layout_height="96sp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/wadaiko"
+        android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound1Button"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound1Button" />
 
     <ImageButton
         android:id="@+id/playSound4Button"
@@ -52,9 +55,10 @@
         android:layout_height="96sp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="80dp"
+        android:background="@drawable/wadaiko"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound2Button"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound2Button" />
 
     <ImageButton
         android:id="@+id/playSound5Button"
@@ -62,9 +66,10 @@
         android:layout_height="96sp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/dora"
+        android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound3Button"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound3Button" />
 
     <ImageButton
         android:id="@+id/playSound6Button"
@@ -72,9 +77,10 @@
         android:layout_height="96sp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="80dp"
+        android:background="@drawable/castanet"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound4Button"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound4Button" />
 
     <ImageButton
         android:id="@+id/playSound7Button"
@@ -82,9 +88,10 @@
         android:layout_height="96sp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/wadaiko2"
+        android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound5Button"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound5Button" />
 
     <ImageButton
         android:id="@+id/playSound8Button"
@@ -92,9 +99,10 @@
         android:layout_height="96sp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="80dp"
+        android:background="@drawable/oh_man"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound6Button"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound6Button" />
 
     <Button
         android:id="@+id/backToMainFromPlayButton"

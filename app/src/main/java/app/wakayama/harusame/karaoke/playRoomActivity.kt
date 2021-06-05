@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -29,6 +30,17 @@ class playRoomActivity : AppCompatActivity() {
         //受け取ったIDとパスワード
         val roomId: String = selectedRoom
         val PassWord: String = "admin"
+
+        //参加したので入室人数を+1する。
+        //更新
+        db.collection(collectionName).document(roomId)
+            .update("people",FieldValue.increment(1))
+            .addOnSuccessListener {
+                Log.d("TAG","入室しました。")
+            }
+            .addOnFailureListener {
+                Log.d("TAG","入室人数の更新(入室)に失敗しました。")
+            }
 
 
         //データをクラウドに保存する関数
@@ -140,7 +152,7 @@ class playRoomActivity : AppCompatActivity() {
                                 docRef.set(newData, SetOptions.merge())//データを統合
                             }
                             "sound6" -> {
-                                val drumSound = MediaPlayer.create(this,R.raw.kastanet)//Rはresのこと。.でパスを表している
+                                val drumSound = MediaPlayer.create(this,R.raw.castanet)//Rはresのこと。.でパスを表している
                                 drumSound.seekTo(0)
                                 drumSound.start()
                                 //データを更新
@@ -191,6 +203,16 @@ class playRoomActivity : AppCompatActivity() {
 
 
         backToMainFromPlayButton.setOnClickListener {
+            //退出するので入室人数を-1する。
+            db.collection(collectionName).document(roomId)
+                .update("people",FieldValue.increment(-1))
+                .addOnSuccessListener {document ->
+                    Log.d("TAG","退室しました。")
+                }
+                .addOnFailureListener {
+                    Log.d("TAG","入室人数の更新(退室)に失敗しました。")
+                }
+
             val toMainIntent:Intent = Intent(this,MainActivity::class.java)
             startActivity(toMainIntent)
             finish()
