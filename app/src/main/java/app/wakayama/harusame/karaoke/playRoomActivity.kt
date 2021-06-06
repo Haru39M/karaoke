@@ -32,52 +32,10 @@ class playRoomActivity : AppCompatActivity() {
         //受け取ったIDとパスワード
         val roomId: String = selectedRoom
 
-        //参加したので入室人数を+1する。
-        //更新
-        db.collection(collectionName).document(roomId)
-            .update("people",FieldValue.increment(1))
-            .addOnSuccessListener {
-                Log.d("TAG","入室しました。")
-            }
-            .addOnFailureListener {
-                Log.d("TAG","入室人数の更新(入室)に失敗しました。")
-            }
-
-
-        //データをクラウドに保存する関数
-        fun createData(roomId:String,musicID:String,times:Int){//ならす音楽のIDと回数を入力
-            val playData = hashMapOf(
-                musicID.toString() to times//key to dataという構造でデータを記録する。
-            )
-
+        //再生リストに+1する関数
+        fun pushMusic(roomId:String,musicId:String){
             db.collection(collectionName).document(roomId)
-                .set(playData, SetOptions.merge())
-                //ドキュメントIDを指定していれば、既にあるドキュメントにデータをセットするのがset.ドキュメントID不定でドキュメントごとデータを入れるのがadd
-                //SetOptions.mergeは、既存のIDのドキュメントにデータを追加する際に統合する(上書きではなく追記)という意味
-                .addOnSuccessListener {
-                    Log.d("TAG", "データの追加に成功しました。")
-                }
-                .addOnFailureListener { e ->
-                    Log.w("TAG", "データを追加できなかったよ...", e)
-                }
-        }
-
-        fun pushMusic(roomId:String,musicId:String){//指定したルームIDのデータをとってきて成功なら音楽を再生
-            //読み取り
-            db.collection(collectionName).document(roomId)
-                .get()
-                .addOnSuccessListener { document ->
-                    val documentId = document.id
-                    var playListTimes = document.data?.get(musicId).toString().toInt()//クラウドからmusicIdの未再生回数をロード
-                    Log.d("TAG", "データの取得に成功しました。")
-                    Log.d("TAG", "roomID:${documentId} => musicID:${document.data} DATA:${playListTimes}")
-                    Log.d("TAG", "local played!!!")//音楽をローカルで再生
-                    playListTimes += 1//未再生回数を1増やす
-                    createData(roomId,musicId,playListTimes)//クラウドにアップ
-                }
-                .addOnFailureListener { exception ->
-                    Log.w("TAG", "データの取得に失敗しました。", exception)
-                }
+                .update(musicId,FieldValue.increment(1))
         }
 
         //受信側。更新があると音楽を再生。
@@ -237,18 +195,38 @@ class playRoomActivity : AppCompatActivity() {
         }
 
     }
+    //入室処理
+    override fun onResume() {
+        super.onResume()
+        //joinで選択されたルーム名を取得
+        val selectedRoom: String = intent.getStringExtra("selectedRoom").toString()
+        Log.d("TAG","get roomID => ${selectedRoom}")
+        //コレクションネームは不変、ドキュメントIDがルーム名、データを未再生リストとする。
+        val collectionName: String = "karaoke"
+        //受け取ったIDとパスワード
+        val roomId: String = selectedRoom
 
+        //参加したので入室人数を+1する。
+        db.collection(collectionName).document(roomId)
+            .update("people",FieldValue.increment(1))
+            .addOnSuccessListener {
+                Log.d("TAG","入室しました。")
+            }
+            .addOnFailureListener {
+                Log.d("TAG","入室人数の更新(入室)に失敗しました。")
+            }
+    }
+    //退出処理
     override fun onPause() {
         super.onPause()
         //joinで選択されたルーム名を取得
         val selectedRoom: String = intent.getStringExtra("selectedRoom").toString()
         Log.d("TAG","get roomID => ${selectedRoom}")
-
         //コレクションネームは不変、ドキュメントIDがルーム名、データを未再生リストとする。
         val collectionName: String = "karaoke"
-
         //受け取ったIDとパスワード
         val roomId: String = selectedRoom
+
         //退出するので入室人数を-1する。
         db.collection(collectionName).document(roomId)
             .update("people",FieldValue.increment(-1))
