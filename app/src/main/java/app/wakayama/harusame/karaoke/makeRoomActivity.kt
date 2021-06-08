@@ -7,12 +7,17 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.core.view.isVisible
+import kotlinx.android.synthetic.main.activity_join_room.*
 import kotlinx.android.synthetic.main.activity_make_room.*
 
 class makeRoomActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_make_room)
+
+        //パスワード入力欄を非表示にする
+        passwordMakeTextView.isVisible = false
 
         val collectionName: String = "karaoke"
 
@@ -55,6 +60,9 @@ class makeRoomActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         setRoom.adapter = adapter
 
+        makePassWordButton.setOnClickListener {
+            passwordMakeTextView.isVisible = true
+        }
         backButton.setOnClickListener {
             val toMainIntent: Intent = Intent(this, MainActivity::class.java)
             startActivity(toMainIntent)
