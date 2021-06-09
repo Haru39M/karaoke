@@ -66,7 +66,7 @@
         android:layout_height="96sp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/dora"
+        android:background="@drawable/suzu"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playSound3Button" />

@@ -189,7 +189,7 @@ class playRoomActivity : AppCompatActivity() {
         Sound2 = MediaPlayer.create(this,R.raw.hyoushigi2)//Rはresのこと。.でパスを表している
         Sound3 = MediaPlayer.create(this,R.raw.wadaiko)//Rはresのこと。.でパスを表している
         Sound4 = MediaPlayer.create(this,R.raw.wadaiko2)//Rはresのこと。.でパスを表している
-        Sound5 = MediaPlayer.create(this,R.raw.dora)//Rはresのこと。.でパスを表している
+        Sound5 = MediaPlayer.create(this,R.raw.suzu)//Rはresのこと。.でパスを表している
         Sound6 = MediaPlayer.create(this,R.raw.castanet)//Rはresのこと。.でパスを表している
         Sound7 = MediaPlayer.create(this,R.raw.kozutsumi)//Rはresのこと。.でパスを表している
         Sound8 = MediaPlayer.create(this,R.raw.oh_man)//Rはresのこと。.でパスを表している
