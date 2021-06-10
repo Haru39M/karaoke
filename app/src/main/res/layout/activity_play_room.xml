@@ -20,97 +20,129 @@
         android:id="@+id/playSound1Button"
         android:layout_width="96sp"
         android:layout_height="96sp"
-        android:layout_marginStart="80dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/hyoushigi"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/playSound3Button"
+        app:layout_constraintEnd_toStartOf="@+id/playSound2Button"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <ImageButton
         android:id="@+id/playSound2Button"
         android:layout_width="96sp"
         android:layout_height="96sp"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="80dp"
         android:background="@drawable/hyoushigi"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/playSound4Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/playSound1Button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <ImageButton
         android:id="@+id/playSound3Button"
         android:layout_width="96sp"
         android:layout_height="96sp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/wadaiko"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/playSound5Button"
+        app:layout_constraintEnd_toStartOf="@+id/playSound4Button"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound1Button" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound1Button"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <ImageButton
         android:id="@+id/playSound4Button"
         android:layout_width="96sp"
         android:layout_height="96sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="80dp"
         android:background="@drawable/wadaiko"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/playSound6Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound2Button" />
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/playSound3Button"
+        app:layout_constraintTop_toBottomOf="@+id/playSound2Button"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <ImageButton
         android:id="@+id/playSound5Button"
         android:layout_width="96sp"
         android:layout_height="96sp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/suzu"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/playSound7Button"
+        app:layout_constraintEnd_toStartOf="@+id/playSound6Button"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound3Button" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound3Button"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <ImageButton
         android:id="@+id/playSound6Button"
         android:layout_width="96sp"
         android:layout_height="96sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="80dp"
         android:background="@drawable/castanet"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/playSound8Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound4Button" />
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/playSound5Button"
+        app:layout_constraintTop_toBottomOf="@+id/playSound4Button"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <ImageButton
         android:id="@+id/playSound7Button"
         android:layout_width="96sp"
         android:layout_height="96sp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/wadaiko2"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/backToMainFromPlayButton"
+        app:layout_constraintEnd_toStartOf="@+id/playSound8Button"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound5Button" />
+        app:layout_constraintTop_toBottomOf="@+id/playSound5Button"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <ImageButton
         android:id="@+id/playSound8Button"
         android:layout_width="96sp"
         android:layout_height="96sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="80dp"
         android:background="@drawable/oh_man"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/backToMainFromPlayButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playSound6Button" />
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/playSound7Button"
+        app:layout_constraintTop_toBottomOf="@+id/playSound6Button"
+        app:layout_constraintVertical_chainStyle="spread" />
 
-    <Button
+    <ImageButton
         android:id="@+id/backToMainFromPlayButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_width="160sp"
+        android:layout_height="80sp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerInside"
         android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playSound7Button"
+        app:srcCompat="@drawable/back" />
+<!--    <Button-->
+<!--        android:id="@+id/backToMainFromPlayButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="80dp"-->
+<!--        android:text="back"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,16 +31,19 @@
             android:hint="パスワードを入力して下さい" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/goToPlayFromJoinButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="80dp"
+        android:layout_width="160sp"
+        android:layout_height="80sp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerInside"
         android:text="GO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/backToMainFromJoinButton"
+        app:srcCompat="@drawable/go" />
 
     <Button
         android:id="@+id/reloadButton"
@@ -48,20 +51,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
         android:text="reload"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/backToMainFromJoinButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="560dp"
+        android:layout_width="160sp"
+        android:layout_height="80sp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerInside"
         android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/goToPlayFromJoinButton"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/back" />
 
     <Spinner
         android:id="@+id/selectRoomSpinner"

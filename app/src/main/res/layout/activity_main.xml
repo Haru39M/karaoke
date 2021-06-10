@@ -6,24 +6,84 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/makeRoomButton"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="make"
+        app:layout_constraintBottom_toTopOf="@+id/explainTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:srcCompat="@drawable/karaoke" />
 
-    <Button
-        android:id="@+id/joinRoomButton"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/explainTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="join"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="友達とのカラオケをもっと盛り上げたい！\nそんな気持ちに応えるアプリです。８種類の効果音を鳴らしてにぎやかな空間にしましょう。"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/makeRoomButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/makeRoomButton" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <ImageButton
+        android:id="@+id/makeRoomButton"
+        android:layout_width="136sp"
+        android:layout_height="136sp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/joinRoomButton"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/explainTextView"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:srcCompat="@drawable/hammer" />
+
+    <ImageButton
+        android:id="@+id/joinRoomButton"
+        android:layout_width="136sp"
+        android:layout_height="136sp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/makeRoomButton"
+        app:layout_constraintTop_toBottomOf="@+id/explainTextView"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:srcCompat="@drawable/mike" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="MAKE\nROOM"
+        android:textColor="#E6FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@id/makeRoomButton"
+        app:layout_constraintEnd_toEndOf="@id/makeRoomButton"
+        app:layout_constraintStart_toStartOf="@id/makeRoomButton"
+        app:layout_constraintTop_toTopOf="@id/makeRoomButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="JOIN\nROOM"
+        android:textColor="#E6FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@id/joinRoomButton"
+        app:layout_constraintEnd_toEndOf="@id/joinRoomButton"
+        app:layout_constraintStart_toStartOf="@id/joinRoomButton"
+        app:layout_constraintTop_toTopOf="@id/joinRoomButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
